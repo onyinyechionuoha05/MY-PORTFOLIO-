@@ -1,101 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Onyinyechi Charity Onuoha</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+</* ==========================
+   ABOUT PAGE
+========================== */
 
-<body>
+.about-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
 
-<header>
-    <h1>Onyinyechi Charity Onuoha</h1>
+/* All About Sections */
 
-    <p>Teacher | AI & IT Support Learner | Customer Support Professional</p>
+.about-section {
+    background: #ffffff;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="resume.html">Resume</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+.about-section h2 {
+    color: #003366;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #003366;
+    display: inline-block;
+    padding-bottom: 5px;
+}
 
-<main>
+.about-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #444;
+}
 
-<section>
+/* Career Journey */
 
-<h2>About Me</h2>
+.career-journey {
+    border-left: 6px solid #003366;
+    background: #f8fbff;
+}
 
-<p>
-Hello! I'm <strong>Onyinyechi Charity Onuoha</strong>, an educator with over 15 years of teaching experience. Throughout my career, I have developed strong communication, problem-solving, organisation, and people-support skills by helping learners understand complex ideas in simple and practical ways.
-</p>
+.career-journey strong {
+    color: #003366;
+}
 
-<p>
-I am currently expanding my skills into AI, IT Support, Customer Support, and Administrative Support. Through the FlyRank AI Fluency Internship, I have completed practical projects that demonstrate how I use AI tools to research, organise information, solve technical problems, and create professional documentation.
-</p>
+/* Education */
 
-<p>
-I enjoy learning new technologies and using them to improve productivity while keeping the human experience at the centre of every solution.
-</p>
+.education-item {
+    background: #f5f7fa;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #003366;
+}
 
-</section>
+.education-item h3 {
+    margin-top: 0;
+    color: #003366;
+}
 
-<section>
+.education-item p {
+    margin: 8px 0;
+}
 
-<h2>Education</h2>
+/* Skills */
 
-<ul>
-  <section>
+.skills-list,
+.focus-list {
+    list-style: none;
+    padding: 0;
+}
 
-    <h2>Education</h2>
+.skills-list li,
+.focus-list li {
+    background: #eef4fb;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-left: 5px solid #003366;
+    border-radius: 6px;
+    font-weight: 500;
+}
 
-    <div class="education-item">
-        <h3>Bachelor of Education (B.Ed.)</h3>
-        <p><strong>Field of Study:</strong> Education Health</p>
-        <p><strong>Institution:</strong> University of Nigeria, Nsukka</p>
-    </div>
+/* Highlight Box */
 
-    <div class="education-item">
-        <h3>Master of Education (M.Ed.)</h3>
-        <p><strong>Field of Study:</strong> Community Health Education</p>
-        <p><strong>Institution:</strong> University of Port Harcourt, Rivers State</p>
-    </div>
+.highlight-box {
+    background: #003366;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    text-align: center;
+}
 
-</section>  
-</ul>
+.highlight-box h3 {
+    margin-top: 0;
+}
 
-</section>
+.highlight-box p {
+    color: white;
+}
 
-<section>
+/* Responsive */
 
-<h2>Current Focus</h2>
+@media (max-width:768px){
 
-<ul>
-    <li>Artificial Intelligence (AI)</li>
-    <li>IT Support</li>
-    <li>Customer Support</li>
-    <li>Administrative Support</li>
-    <li>Technical Documentation</li>
-</ul>
+.about-container{
+padding:15px;
+}
 
-</section class="career-journey">
-<h2>Career journey</h2></main>
-<p>
-  <ul>
-    <1i><strong>15+ Years</strong>-Teaching and student support.</1i>
-      <1i><strong>2026</strong>-Transition into AI,IT Support,and Customer Support.</1i>
-        <1i><strong>Present</strong>-Building Pratical experience through the FlyRank AI Fluency Internship.</1i>
-  </ul>
-</p>
-<footer>
+.about-section{
+padding:20px;
+}
 
-<p>© 2026 Onyinyechi Charity Onuoha</p>
+.about-section p{
+font-size:16px;
+}
 
-</footer>
-
-</body>
-</html>
+}
