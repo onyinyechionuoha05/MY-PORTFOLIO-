@@ -1,0 +1,372 @@
+/* ===================================================================
+   DESIGN TOKENS
+   Palette inspired by a classroom chalkboard meeting an IT workbench —
+   a nod to the move from teaching into tech.
+=================================================================== */
+:root {
+  --paper: #FAF8F3;         /* main background, like paper/chalk dust */
+  --board: #26362B;         /* chalkboard green, used for header/footer/dark text */
+  --board-tint: #EEF2ED;    /* pale green tint for alternating sections */
+  --ink: #22261F;           /* body text */
+  --accent: #3F6C8C;        /* slate blue, IT/tech accent */
+  --chalk-gold: #B98B2E;    /* muted gold, small highlights only */
+  --line: #D8D2C4;          /* hairline dividers */
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, monospace;
+
+  --max-width: 760px;
+}
+
+/* ===================================================================
+   RESET & BASE
+=================================================================== */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--board);
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--chalk-gold);
+  outline-offset: 3px;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* ===================================================================
+   HEADER / NAV
+=================================================================== */
+.site-header {
+  background: var(--board);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav__name {
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav__links a {
+  color: var(--paper);
+  opacity: 0.85;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav__links a:hover,
+.nav__links a:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+}
+
+/* ===================================================================
+   HERO
+=================================================================== */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 72px 24px 56px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.hero__name {
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.hero__role {
+  font-size: 1.15rem;
+  color: var(--board);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.hero__tagline {
+  max-width: 46ch;
+  color: #4b5346;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+/* ===================================================================
+   BUTTONS
+=================================================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 11px 20px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+.btn--primary {
+  background: var(--board);
+  color: var(--paper);
+}
+.btn--primary:hover { background: #1c2820; }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--board);
+  border-color: var(--board);
+}
+.btn--ghost:hover { background: var(--board-tint); }
+
+.btn--small {
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: var(--paper);
+}
+.btn--small:hover { background: #345a76; }
+
+.btn:hover { transform: translateY(-1px); }
+
+/* ===================================================================
+   SECTIONS
+=================================================================== */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px;
+  border-top: 1px solid var(--line);
+}
+
+.section--tint {
+  max-width: none;
+  background: var(--board-tint);
+  border-top: 1px solid var(--line);
+}
+.section--tint > * {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Chalk-style checkmark: a nod to the checklist logic of the
+   Career & Learning Assistant, used as the page's one repeated motif */
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--chalk-gold);
+  border-radius: 50%;
+  color: var(--chalk-gold);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.section__body p {
+  max-width: 62ch;
+}
+
+/* ===================================================================
+   SKILLS
+=================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.skill-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  border-radius: 3px;
+}
+
+/* ===================================================================
+   PROJECT CARD
+=================================================================== */
+.project-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 28px;
+}
+
+.project-card__label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--chalk-gold);
+  margin-bottom: 8px;
+}
+
+.project-card__title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* ===================================================================
+   CONTACT
+=================================================================== */
+.contact-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-links__soon {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #6b7266;
+  padding: 11px 4px;
+}
+
+/* ===================================================================
+   FOOTER
+=================================================================== */
+.site-footer {
+  background: var(--board);
+  color: var(--paper);
+  opacity: 0.85;
+  text-align: center;
+  padding: 24px;
+  font-size: 0.85rem;
+}
+
+/* ===================================================================
+   RESPONSIVE
+=================================================================== */
+@media (max-width: 480px) {
+  .hero { padding: 56px 20px 40px; }
+  .section { padding: 44px 20px; }
+  .nav { padding: 12px 16px; }
+  .nav__links { gap: 12px; }
+}
+/* ===================================================================
+   CONTACT FORM (Week 8 — Assignment 1: "Make It Do Something")
+=================================================================== */
+.contact-form__heading {
+  margin-top: 32px;
+  font-size: 1.15rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 480px;
+  margin-top: 12px;
+}
+
+.contact-form label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--board);
+  margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.contact-form button {
+  margin-top: 14px;
+  align-self: flex-start;
+}
